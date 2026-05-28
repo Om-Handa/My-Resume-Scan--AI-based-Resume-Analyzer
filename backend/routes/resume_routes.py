@@ -39,7 +39,7 @@ def upload_resume():
         job_description
     )
 
-    suggestions=generate_suggestions(extracted_text, job_description, analysis['missing_skills'], analysis['ats_score'])
+    suggestions=generate_suggestions(extracted_text, job_description, analysis['missing_skills'], analysis['ats_score'], analysis['keyword_score'], analysis['quality_score'], analysis['formatting_score'])
 
     analysis_data= ResumeAnalysis(
         filename=file.filename,
@@ -63,7 +63,7 @@ def upload_resume():
 @resume_bp.route('/history', methods=['GET'])
 def get_history():
 
-    analyses=ResumeAnalysis.query.all()
+    analyses=ResumeAnalysis.query.order_by(ResumeAnalysis.id.desc()).limit(4).all()
     history=[]
      
     for analysis in analyses:
