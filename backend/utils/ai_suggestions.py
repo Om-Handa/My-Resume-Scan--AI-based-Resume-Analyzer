@@ -25,11 +25,9 @@ def generate_suggestions(resume_text, job_description, missing_skills, ats_score
     if ats_score < 60:
         suggestions.append("Improve project descriptions with measurable achievements")
 
-    if len(suggestions) == 0:
-        suggestions.append("Resume matches job description well")
-
     if quality_score<60:   
         suggestions.append("Use stronger action words in project descriptions") 
+        suggestions.append("Add action words like 'Deployed, Optimized, Developed, Managed etc.'") 
         
     if formatting_score<60:   
         suggestions.append("Include clear Skills, Projects and Education sections") 
