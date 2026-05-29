@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   const fetchHistory = async () => {
-    const response = await fetch("https://my-resume-scan-ai-based-resume-analyzer.onrender.com//history");
+    const response = await fetch("https://my-resume-scan-ai-based-resume-analyzer.onrender.com/history");
     const data = await response.json();
     sethistory(data.history);
   };

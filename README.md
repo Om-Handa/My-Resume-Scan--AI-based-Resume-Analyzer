@@ -234,7 +234,7 @@ npm run dev
 
 ### Database
 
-* MySQL (Railway / PlanetScale)
+* MySQL (Railway)
 
 ---
 
