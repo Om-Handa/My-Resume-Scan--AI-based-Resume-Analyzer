@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 app.config.from_object(Config)
 
-CORS(app,resources={r"/*": {"origins": ["https://my-resume-scan-ai-based-resume-anal.vercel.app/"]}})
+CORS(app, origins=["https://my-resume-scan-ai-based-resume-anal.vercel.app"])
 
 db.init_app(app)
 
