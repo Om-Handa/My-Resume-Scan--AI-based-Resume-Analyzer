@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   const fetchHistory = async () => {
-    const response = await fetch("http://127.0.0.1:5000/history");
+    const response = await fetch("https://my-resume-scan-ai-based-resume-analyzer.onrender.com//history");
     const data = await response.json();
     sethistory(data.history);
   };
@@ -47,7 +47,7 @@ function App() {
       formData.append("resume", file);
       formData.append("jobDescription", jobDescription);
 
-      const response = await fetch("http://127.0.0.1:5000/upload", {
+      const response = await fetch("https://my-resume-scan-ai-based-resume-analyzer.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
