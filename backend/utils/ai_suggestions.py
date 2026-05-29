@@ -85,9 +85,9 @@ def calculate_semantic_score(resume_text, job_description):
             config={"max_output_tokens":10, "temperature":0.1,"thinking_config": {"thinking_budget": 0}}
         )
         match = re.search(r'\b(\d{2,3})\b', response.text.strip())
-        score = int(match.group()) if match else 70
+        score = int(match.group()) if match else 50
         return min(max(score, 0), 100)
 
     except Exception as e:
         print(f"[calculate_semantic_score] error: {e}") 
-        return 70
+        return 50
